@@ -1,5 +1,6 @@
 //아래 코드의 출력 결과를 순서대로 모두 맞추세요.
-//정답은 4줄로 적어주세요.
+//정답과 이유를 함께 적어주세요.
+
 
 var name = "Global";
 
@@ -28,7 +29,8 @@ const user = {
   },
 };
     
-user.getNameLater1();
+user.getNameLater1(); 
 user.getNameLater2();
 user.getNameLater3();
 user.getNameLater4();
+
