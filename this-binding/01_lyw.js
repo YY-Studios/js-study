@@ -14,7 +14,7 @@ const user = {
     }, 0);
   },
   getNameLater2() {
-    console.log(this) // this는 함수를 호출한 객체를 바인딩 -> user.getNameLater1() user가 호출 했기때문에 user를 바인딩함
+    console.log(this) // this는 함수를 호출한 객체를 바인딩 -> user.getNameLater2() user가 호출 했기때문에 user를 바인딩함
     setTimeout(() => {
       console.log("2:", this.name); // 화살표함수는 화살표 함수를 감싸고 있는 스코프의 this를 가져옴 -> getNameLater2가 감싸고있는데 getNameLater2 의 this는 user임
     }, 0);
@@ -32,4 +32,4 @@ const user = {
 user.getNameLater1(); //Glrobal
 user.getNameLater2(); //Yujin
 user.getNameLater3(); //Glrobal
-user.getNameLater4(); //YujinYujin
+user.getNameLater4(); //Yujin
