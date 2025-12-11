@@ -4,10 +4,12 @@
 //특히 아래 4개 상황에서 this가 어떻게 바인딩되는지 설명하시오:
 //일반 함수 호출, 메서드 호출, bind로 고정한 함수, this가 없는 상황에서의 화살표 함수
 // 1. 1 => counter 객체 바인딩해서 1됨
-// 2. Global => setTimeout때문에 바인딩이 풀려서 전역으로 바인딩 하게됨
-// 3. 1 => 화살표함수는 this가 없어서 상위객체껄로 자동 바인딩
-// 4. 모르겠어요..
-// 5. Global => this는 전역인데 inc가 없어서
+// 4. Global => map 콜백은 기본적으로 this를 bind하지않는다. map(fn) 호출 시 thisArg를 주지 않아서 [map - 동기]
+// 콜백내부는 this = undefined (strict) 이지만 브라우저 일반 실행에서 undefined가 window로 변환됨
+// 5. Global => this는 전역인데 inc가 없어서 [콜백 - 동기]
+// 2. Global => setTimeout때문에 this를 바인딩하지 않아서 전역으로 바인딩 하게됨 [setTimeout - 태스크큐]
+// 3. 2 => 화살표함수는 this가 없어서 상위객체껄로 자동 바인딩, 클로저
+
 
 var name = "Global";
 
